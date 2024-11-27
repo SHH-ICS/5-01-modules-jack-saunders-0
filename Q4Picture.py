@@ -5,44 +5,34 @@
 import pygame
 import sys
 
-# Initialize Pygame
+# Initialize pygame
 pygame.init()
 
-# Set the dimensions of the window
-width, height = 500, 500
-screen = pygame.display.set_mode((width, height))
-
-# Set the window title
-pygame.display.set_caption("Simple Picture")
+# Set up the display window
+screen = pygame.display.set_mode((400, 400))
+pygame.display.set_caption("Q4 Picture")
 
 # Define colors
-BLUE = (0, 0, 255)
 RED = (255, 0, 0)
-YELLOW = (255, 255, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
 WHITE = (255, 255, 255)
 
-# Fill the background with white color
+# Fill the screen with white color
 screen.fill(WHITE)
 
-# Draw a blue rectangle
-pygame.draw.rect(screen, BLUE, (100, 100, 200, 150))
+# Draw shapes
+pygame.draw.rect(screen, RED, pygame.Rect(50, 50, 200, 100))  # Red rectangle
+pygame.draw.circle(screen, GREEN, (300, 300), 50)  # Green circle
+pygame.draw.line(screen, BLUE, (50, 50), (350, 350), 5)  # Blue line
 
-# Draw a red circle
-pygame.draw.circle(screen, RED, (300, 300), 50)
-
-# Draw a yellow line
-pygame.draw.line(screen, YELLOW, (50, 450), (450, 450), 5)
-
-# Update the display to show the drawing
+# Update the display
 pygame.display.flip()
 
-# Run the game loop
-running = True
-while running:
+# Keep the window open
+while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            pygame.quit()
+            sys.exit()
 
-# Quit Pygame
-pygame.quit()
-sys.exit()
