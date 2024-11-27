@@ -1,2 +1,13 @@
-# Create a program that will accept the two legs of a right-angle triangle, a and b, and display the length of the hypotenuse, c. 
-# Remember to use prompts for the input and labels for the output. Use the formula a2 + b2 = c2 to calculate your answer.
+# Q1Pythagoras.py
+
+import math
+
+# Accepting inputs from the user for the two legs of the triangle
+a = float(input("Enter the length of the first leg of the right-angle triangle (a): "))
+b = float(input("Enter the length of the second leg of the right-angle triangle (b): "))
+
+# Calculate the length of the hypotenuse using the Pythagorean theorem
+c = math.sqrt(a**2 + b**2)
+
+# Display the result
+print(f"The length of the hypotenuse (c) is: {c:.2f}")
