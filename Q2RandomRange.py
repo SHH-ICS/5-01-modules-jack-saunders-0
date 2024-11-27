@@ -4,18 +4,13 @@
 
 import random
 
-# Function to generate a random number within a given range
-def generate_random_number(start, end):
-    return random.randint(start, end)
+# Accepting two numbers as range limits
+low = int(input("Enter the lower limit of the range: "))
+high = int(input("Enter the upper limit of the range: "))
 
-# Input from the user for the two numbers (range)
-start = int(input("Enter the starting number of the range: "))
-end = int(input("Enter the ending number of the range: "))
+# Generate a random number within the specified range
+random_number = random.randint(low, high)
 
-# Ensure the start is less than or equal to the end
-if start > end:
-    print("The starting number must be less than or equal to the ending number.")
-else:
-    # Generate and output a random number between the two numbers (inclusive)
-    random_number = generate_random_number(start, end)
-    print(f"A random number between {start} and {end} is: {random_number}")
+# Display the result
+print(f"A random number between {low} and {high} is: {random_number}")
+
